@@ -1,55 +1,35 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Button } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
-import Btn from '../Btn/Btn';
-import './NavBar.css';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { NavigationItems } from '../../common/data/NavigationItems';
-import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setFiltredMakeData } from '../../redux/carsSlice';
 
-const listAnimation = {
+const itemVariants = {
 	hidden: {
-		x: 100,
 		opacity: 0,
+		x: -20,
+		scale: 0.8,
 	},
 	visible: (custom) => ({
-		x: 0,
 		opacity: 1,
+		x: 0,
+		scale: 1,
 		transition: {
 			delay: custom * 0.2,
 			ease: 'easeOut',
-			duration: 0.3,
+			duration: 0.5,
 		},
 	}),
+	hover: {
+		scale: 1.1,
+	},
 };
 
-const NavBar = ({ onClick, onClose }) => {
-	const { t, i18n } = useTranslation();
-	const [languageKey, setLanguageKey] = useState(i18n.language);
-	const [navBarItems, setNavBarItems] = useState(NavigationItems);
+const NavBar = ({ onClose }) => {
+	const { t } = useTranslation();
 	const dispatch = useDispatch();
 
-	useEffect(() => {
-		const NavItems = [
-			{
-				name: t('nav.home'),
-				path: '/',
-			},
-			{
-				name: t('nav.catalog'),
-				path: '/catalog',
-			},
-			{
-				name: t('nav.favorite'),
-				path: '/favorite',
-			},
-		];
-
-		setNavBarItems(NavItems);
-		setLanguageKey(i18n.language);
-	}, [t, i18n]);
 	return (
 		<Flex
 			as={motion.ul}
@@ -61,29 +41,71 @@ const NavBar = ({ onClick, onClose }) => {
 			}}
 			gap={5}
 			listStyleType="none"
-			display={'flex'}
-			flexDirection={'column'}
-			key={languageKey}>
-			{navBarItems.map(({ name, path }, index) => (
-				<Box
-					as={motion.li}
-					variants={listAnimation}
-					custom={index + 1}
-					key={name}>
-					<NavLink
-						className="navLink"
-						to={path}
-						onClick={() => {
-							onClose();
-							dispatch(setFiltredMakeData([]));
-						}}>
-						<Btn
-							text={name}
-							onClick={onClick}
-						/>
-					</NavLink>
-				</Box>
-			))}
+			display="flex"
+			flexDirection="column">
+			<Box
+				as={motion.li}
+				variants={itemVariants}
+				custom={1}>
+				<Button
+					as={NavLink}
+					fontSize={'18px'}
+					variant="link"
+					_activeLink={{
+						fontSize: '24px',
+						fontWeight: '600',
+					}}
+					colorScheme="blue"
+					to="/"
+					onClick={() => {
+						onClose();
+						dispatch(setFiltredMakeData([]));
+					}}>
+					{t('nav.home')}
+				</Button>
+			</Box>
+			<Box
+				as={motion.li}
+				variants={itemVariants}
+				custom={2}>
+				<Button
+					as={NavLink}
+					fontSize={'18px'}
+					variant="link"
+					colorScheme="blue"
+					_activeLink={{
+						fontSize: '24px',
+						fontWeight: '600',
+					}}
+					to="/catalog"
+					onClick={() => {
+						onClose();
+						dispatch(setFiltredMakeData([]));
+					}}>
+					{t('nav.catalog')}
+				</Button>
+			</Box>
+			<Box
+				as={motion.li}
+				variants={itemVariants}
+				custom={3}>
+				<Button
+					as={NavLink}
+					fontSize={'18px'}
+					variant="link"
+					_activeLink={{
+						fontSize: '24px',
+						fontWeight: '600',
+					}}
+					colorScheme="blue"
+					to="/favorite"
+					onClick={() => {
+						onClose();
+						dispatch(setFiltredMakeData([]));
+					}}>
+					{t('nav.favorite')}
+				</Button>
+			</Box>
 		</Flex>
 	);
 };

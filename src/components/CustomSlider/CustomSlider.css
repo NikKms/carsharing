@@ -1,0 +1,10 @@
+.CustomSwiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background-color: #9ea19e;
+	border: 3px solid #acadac;
+}
+
+.CustomSwiper .swiper-pagination-bullet {
+	background-color: rgba(255, 255, 255, 0.7);
+	width: 16px;
+	height: 16px;
+}

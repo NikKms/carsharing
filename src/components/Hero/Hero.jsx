@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import Slider from '../Slider/Slider';
+import CustomSlider from '../CustomSlider/CustomSlider';
 import heroBgArr from './heroBgArr';
 import { Box, Button, Container, Heading } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
@@ -32,7 +32,7 @@ const Hero = () => {
 					</Button>
 				</Container>
 			</Box>
-			<Slider data={heroBgArr} />
+			<CustomSlider data={heroBgArr} />
 		</section>
 	);
 };
