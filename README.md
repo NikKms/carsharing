@@ -1,8 +1,24 @@
-# React + Vite
+# Car Rental Carsharing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology Stack
+- 🚀 **React**
+- 🔧 **Vite**
+- Chakra UI
 
-Currently, two official plugins are available:
+🤖 **Technical Challenge**
+🚀 **Project Start Date:** 01.11.2023
+🏁 **Project End Date:** 05.11.2023
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Highlights
+🚗 Developed an advanced car rental application.
+🌐 Supports two languages: Ukrainian and English.
+📱 Mobile design for a seamless user experience.
+📡 Implemented server requests for paginated car lists (12 cars per page) with dynamic loading.
+📊 Smart filters for price, mileage, and manufacturer.
+🌟 Added a convenient feature to add cars to favorites.
+📑 Designed an elegant modal window with detailed car information.
+🎥 Integrated smooth animations, a stylish slider.
+🎨 Enjoy a personalized experience with theme customization.
+
+
+https://www.pexels.com/ru-ru/photo/35967/
