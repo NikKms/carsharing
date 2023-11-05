@@ -7,7 +7,6 @@ import {
 	DrawerOverlay,
 	IconButton,
 	Image,
-	useColorMode,
 	useDisclosure,
 	Flex,
 	Text,
@@ -51,8 +50,8 @@ const Header = () => {
 				</Flex>
 				<IconButton
 					ml={'auto'}
-					onClick={isOpen ? () => onClose() : () => onOpen()}>
-					{isOpen ? <CloseIcon /> : <HamburgerIcon />}
+					onClick={() => onOpen()}>
+					<HamburgerIcon />
 				</IconButton>
 			</Container>
 			<Drawer
@@ -61,7 +60,14 @@ const Header = () => {
 				onClose={onClose}
 				finalFocusRef={btnRef}>
 				<DrawerOverlay />
-				<DrawerContent>
+				<DrawerContent pt={'24px'}>
+					<IconButton
+						display={'flex'}
+						ml={'auto'}
+						mr={'auto'}
+						onClick={() => onClose()}>
+						<CloseIcon />
+					</IconButton>
 					<DrawerBody
 						pt={'120px'}
 						color="white">
