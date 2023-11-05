@@ -109,8 +109,7 @@ const ModalCard = ({ isOpen, onClose }) => {
 								</Text>
 								<Text
 									fontSize="12px"
-									fontWeight="400"
-									colorScheme={'gray'}>
+									fontWeight="400">
 									{car.address && (
 										<>
 											{`${extractCityAndCountry(car.address).city} | ${
@@ -124,7 +123,6 @@ const ModalCard = ({ isOpen, onClose }) => {
 								<Text
 									fontSize="12px"
 									fontWeight="400"
-									colorScheme={'gray'}
 									mb={'14px'}>
 									{`Fuel Consumption: ${car.fuelConsumption} | Engine Size: ${car.engineSize}`}
 								</Text>
@@ -144,7 +142,6 @@ const ModalCard = ({ isOpen, onClose }) => {
 									as="div"
 									fontSize="12px"
 									fontWeight="400"
-									colorScheme={'gray'}
 									display={'flex'}
 									flexWrap={'wrap'}>
 									{car.accessories?.map((el, index) => (
@@ -167,7 +164,6 @@ const ModalCard = ({ isOpen, onClose }) => {
 									as="div"
 									fontSize="12px"
 									fontWeight="400"
-									colorScheme={'gray'}
 									display={'flex'}
 									flexWrap={'wrap'}
 									mb={'24px'}>
