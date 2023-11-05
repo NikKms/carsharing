@@ -87,7 +87,7 @@ const FilterMake = () => {
 		dispatch(setSortMakeData(selectedPriceValue));
 
 		const filteredCars = data.filter(
-			(car) => parseFloat(car.rentalPrice.slice(1)) >= selectedPriceValue,
+			(car) => parseFloat(car.rentalPrice.slice(1)) <= selectedPriceValue,
 		);
 
 		dispatch(setFiltredMakeData(filteredCars));
