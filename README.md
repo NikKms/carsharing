@@ -21,4 +21,4 @@
 🎨 Enjoy a personalized experience with theme customization.
 
 
-https://www.pexels.com/ru-ru/photo/35967/
+
