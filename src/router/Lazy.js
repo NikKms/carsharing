@@ -5,9 +5,9 @@ const Catalog = React.lazy(() => import('../pages/Catalog'));
 const Favorites = React.lazy(() => import('../pages/Favorites'));
 
 const Pages = {
-  Home,
-  Catalog,
-  Favorites,
+	Home,
+	Catalog,
+	Favorites,
 };
 
 export default Pages;

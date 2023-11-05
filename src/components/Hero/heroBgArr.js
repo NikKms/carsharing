@@ -8,12 +8,12 @@ import bgHero7 from '../../assets/img/7.jpg';
 import bgHero8 from '../../assets/img/8.jpg';
 
 export default [
-  bgHero1,
-  bgHero2,
-  bgHero3,
-  bgHero4,
-  bgHero5,
-  bgHero6,
-  bgHero7,
-  bgHero8,
+	bgHero1,
+	bgHero2,
+	bgHero3,
+	bgHero4,
+	bgHero5,
+	bgHero6,
+	bgHero7,
+	bgHero8,
 ];

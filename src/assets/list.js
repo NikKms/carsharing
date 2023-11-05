@@ -1,7 +1,6 @@
-
- const cars = [
+[
     {
-        "id": 9582,
+        "id": 1,
         "year": 2008,
         "make": "Buick",
         "model": "Enclave",
@@ -24,7 +23,7 @@
         "rentalCompany": "Luxury Car Rentals",
         "address": "123 Example Street, Kiev, Ukraine",
         "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit required",
-        "mileage": 5858
+        "mileage": 5858,
     },
     {
         "id": 9584,
@@ -832,8 +831,4 @@
         "rentalConditions": "Minimum age: 23\nValid driver's license\nCredit card required",
         "mileage": 4568
     }
-    
 ]
-
-
-export default cars
