@@ -1,8 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import CustomSlider from '../CustomSlider/CustomSlider';
-import heroBgArr from './heroBgArr';
 import { Box, Button, Container, Heading } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
+import bgHero1 from '../../assets/img/1.jpg';
+import bgHero2 from '../../assets/img/2.jpg';
+import bgHero3 from '../../assets/img/3.jpg';
+import bgHero6 from '../../assets/img/6.jpg';
+import bgHero7 from '../../assets/img/7.jpg';
+
+const data = [bgHero1, bgHero2, bgHero3, bgHero6, bgHero7];
 
 const Hero = () => {
 	const { t } = useTranslation();
@@ -32,7 +38,7 @@ const Hero = () => {
 					</Button>
 				</Container>
 			</Box>
-			<CustomSlider data={heroBgArr} />
+			<CustomSlider data={data} />
 		</section>
 	);
 };

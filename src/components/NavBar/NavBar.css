@@ -1,0 +1,7 @@
+/* NavBar.css or your stylesheet */
+
+.activeLink.active {
+	color: #ff0000; /* Set the color for the active link */
+	font-weight: bold; /* Set the font weight for the active link */
+	/* Add any other styles you want for the active link */
+}
