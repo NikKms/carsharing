@@ -96,14 +96,15 @@ const CarList = ({ showFavorites, showLoadMore, onOpen }) => {
 					))}
 				</Box>
 			)}
-			{!showBtn ? (
+			{filterData.length === 0 && !showBtn ? (
 				<Text
 					mt={'32px'}
 					fontSize={'xl'}>
 					{t('carList.endList')}
 				</Text>
 			) : (
-				showLoadMore && (
+				showLoadMore &&
+				filterData.length === 0 && (
 					<Button
 						onClick={handleIncrementP}
 						color={'white'}

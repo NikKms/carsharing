@@ -14,6 +14,7 @@ import {
 	Text,
 	ChakraProvider,
 	theme,
+	useColorMode,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
@@ -36,6 +37,7 @@ const customStyles = {
 };
 
 const FilterMake = () => {
+	const { colorMode } = useColorMode();
 	const [filterData, setFilterData] = useState([]);
 	const [priceData, setPriceData] = useState([]);
 	const [mileageRange, setMileageRange] = useState({ from: '', to: '' });
@@ -63,6 +65,18 @@ const FilterMake = () => {
 					label: price.slice(1),
 				}))
 				.sort((a, b) => parseFloat(a.value) - parseFloat(b.value));
+
+			const minMileage = Math.min(
+				...data.map((car) => parseFloat(car.mileage)),
+			);
+			const maxMileage = Math.max(
+				...data.map((car) => parseFloat(car.mileage)),
+			);
+
+			setMileageRange({
+				from: minMileage.toString(),
+				to: maxMileage.toString(),
+			});
 
 			setFilterData(makesOptions);
 			setPriceData(priceOptions);
