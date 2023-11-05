@@ -1,10 +1,5 @@
 # Car Rental Carsharing
 
-## Technology Stack
-- 🚀 **React**
-- 🔧 **Vite**
-- Chakra UI
-
 🤖 **Technical Challenge**
 🚀 **Project Start Date:** 01.11.2023
 🏁 **Project End Date:** 05.11.2023
@@ -20,5 +15,8 @@
 🎥 Integrated smooth animations, a stylish slider.
 🎨 Enjoy a personalized experience with theme customization.
 
-
+## Technology Stack
+- 🚀 **React**
+- 🔧 **Vite**
+- Chakra UI
 
