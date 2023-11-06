@@ -55,7 +55,7 @@ const CarListItem = ({
 
 	return (
 		<Box
-			as="li"
+			// as="li"
 			pb={'4px'}
 			width="274px"
 			height="426px"

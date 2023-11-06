@@ -12,6 +12,20 @@ import { setPValue, selectPValue } from '../../redux/carsSlice';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { motion } from 'framer-motion';
+
+const MotionBox = motion(Box);
+
+const containerVariants = {
+	hidden: { opacity: 0, y: -80 },
+	visible: { opacity: 1, y: 0 },
+};
+
+const itemVariants = {
+	hidden: { opacity: 0, y: -80 },
+	visible: { opacity: 1, y: 0 },
+};
+
 const CarList = ({ showFavorites, showLoadMore, onOpen }) => {
 	const [showBtn, setShowBtn] = useState(true);
 	const dataCars = useSelector(selectDataCars);
@@ -79,22 +93,35 @@ const CarList = ({ showFavorites, showLoadMore, onOpen }) => {
 			{favoriteCars.length === 0 && currentPathname.includes('/favorite') ? (
 				<div>{t('carList.anyCar')}</div>
 			) : (
-				<Box
+				<MotionBox
 					as="ul"
-					display={'flex'}
-					flexWrap={'wrap'}
-					gap={'50px 29px'}
-					alignItems={'center'}
-					justifyContent={'center'}>
+					listStyleType="none"
+					variants={containerVariants}
+					initial="hidden"
+					animate="visible"
+					transition={{ duration: 0.5, type: 'spring' }}
+					display="flex"
+					flexWrap="wrap"
+					gap="50px 29px"
+					alignItems="center"
+					justifyContent="center">
 					{filteredCars.map(({ id, ...carProps }) => (
-						<CarListItem
+						<motion.li
 							key={id}
-							id={id}
-							{...carProps}
-							onOpen={onOpen}
-						/>
+							initial="hidden"
+							animate="visible"
+							variants={itemVariants}
+							whileHover={{ scale: 1.03 }}
+							whileTap={{ scale: 0.85 }}
+							transition={{ duration: 0.5, type: 'spring' }}>
+							<CarListItem
+								id={id}
+								{...carProps}
+								onOpen={onOpen}
+							/>
+						</motion.li>
 					))}
-				</Box>
+				</MotionBox>
 			)}
 			{filterData.length === 0 && !showBtn ? (
 				<Text
