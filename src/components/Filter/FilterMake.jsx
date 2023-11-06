@@ -14,7 +14,6 @@ import {
 	Text,
 	ChakraProvider,
 	theme,
-	useColorMode,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
@@ -37,7 +36,6 @@ const customStyles = {
 };
 
 const FilterMake = () => {
-	const { colorMode } = useColorMode();
 	const [filterData, setFilterData] = useState([]);
 	const [priceData, setPriceData] = useState([]);
 	const [mileageRange, setMileageRange] = useState({ from: '', to: '' });
@@ -104,7 +102,12 @@ const FilterMake = () => {
 			(car) => parseFloat(car.rentalPrice.slice(1)) <= selectedPriceValue,
 		);
 
-		dispatch(setFiltredMakeData(filteredCars));
+		const sortedCars = [...filteredCars].sort(
+			(a, b) =>
+				parseFloat(a.rentalPrice.slice(1)) - parseFloat(b.rentalPrice.slice(1)),
+		);
+
+		dispatch(setFiltredMakeData(sortedCars));
 	};
 
 	const handleMileageRangeChange = (e) => {
@@ -126,7 +129,11 @@ const FilterMake = () => {
 				return mileage >= fromValue && mileage <= toValue;
 			});
 
-			dispatch(setFiltredMakeData(filteredCars));
+			const sortedCars = [...filteredCars].sort(
+				(a, b) => a.mileage - b.mileage,
+			);
+
+			dispatch(setFiltredMakeData(sortedCars));
 		}
 	};
 
