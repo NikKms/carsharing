@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button, Image } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
 const BtnToTop = () => {
 	const [isVisible, setIsVisible] = useState(false);

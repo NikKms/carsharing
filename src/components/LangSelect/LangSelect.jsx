@@ -1,4 +1,4 @@
-import { Box, Flex, Button, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Button } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
