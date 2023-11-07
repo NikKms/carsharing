@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Box, Flex } from '@chakra-ui/react';
 import Header from './Header';
 import Footer from './Footer';
@@ -22,6 +24,10 @@ const Layout = ({ children }) => {
 			</Flex>
 		</Box>
 	);
+};
+
+indexedDB.propTypes = {
+	children: PropTypes.node,
 };
 
 export default Layout;

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Box, Flex, Button } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -108,6 +110,9 @@ const NavBar = ({ onClose }) => {
 			</Box>
 		</Flex>
 	);
+};
+NavBar.propTypes = {
+	onClose: PropTypes.func.isRequired,
 };
 
 export default NavBar;

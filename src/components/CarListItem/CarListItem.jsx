@@ -148,6 +148,7 @@ const CarListItem = ({
 };
 
 CarListItem.propTypes = {
+	id: PropTypes.string.isRequired,
 	make: PropTypes.string.isRequired,
 	img: PropTypes.string.isRequired,
 	model: PropTypes.string.isRequired,
@@ -158,6 +159,7 @@ CarListItem.propTypes = {
 	type: PropTypes.string.isRequired,
 	mileage: PropTypes.number.isRequired,
 	accessories: PropTypes.array.isRequired,
+	onOpen: PropTypes.func.isRequired,
 };
 
 export default CarListItem;

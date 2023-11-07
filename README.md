@@ -1,6 +1,6 @@
 # Car Rental Car
 
-🤖 **Tech Challenge**
+😺✅ **Tech Challenge**
 🚀 **Project Kick-off:** 01.11.2023
 🏁 **Deadline:** 05.11.2023
 

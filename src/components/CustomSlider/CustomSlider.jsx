@@ -20,7 +20,7 @@ const CustomSlider = ({ data }) => {
 		centeredSlides: true,
 		effect: 'fade',
 		autoplay: {
-			delay: 4000,
+			delay: 5000,
 			disableOnInteraction: false,
 		},
 		modules: [EffectFade, Autoplay, Pagination],

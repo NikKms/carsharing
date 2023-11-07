@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Box, Button, Spinner, Text } from '@chakra-ui/react';
 import CarListItem from '../CarListItem/CarListItem';
 import {
@@ -111,8 +113,6 @@ const CarList = ({ showFavorites, showLoadMore, onOpen }) => {
 							initial="hidden"
 							animate="visible"
 							variants={itemVariants}
-							whileHover={{ scale: 1.03 }}
-							whileTap={{ scale: 0.85 }}
 							transition={{ duration: 0.5, type: 'spring' }}>
 							<CarListItem
 								id={id}
@@ -147,6 +147,12 @@ const CarList = ({ showFavorites, showLoadMore, onOpen }) => {
 			)}
 		</Box>
 	);
+};
+
+CarList.propTypes = {
+	showFavorites: PropTypes.bool,
+	showLoadMore: PropTypes.bool,
+	onOpen: PropTypes.func.isRequired,
 };
 
 export default CarList;

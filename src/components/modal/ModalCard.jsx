@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
 	Box,
 	Image,
@@ -300,6 +302,11 @@ const ModalCard = ({ isOpen, onClose }) => {
 			</Modal>
 		</Box>
 	);
+};
+
+ModalCard.propTypes = {
+	isOpen: PropTypes.bool.isRequired,
+	onClose: PropTypes.func.isRequired,
 };
 
 export default ModalCard;

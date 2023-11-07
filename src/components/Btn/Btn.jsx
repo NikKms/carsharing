@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Button } from '@chakra-ui/react';
 
 const Btn = ({ text, style = null, icon = null, onClick }) => {
@@ -29,6 +31,13 @@ const Btn = ({ text, style = null, icon = null, onClick }) => {
 			{text}
 		</Button>
 	);
+};
+
+Btn.protoTypes = {
+	text: PropTypes.string,
+	style: PropTypes.string,
+	icon: PropTypes.string,
+	onClick: PropTypes.func.isRequired,
 };
 
 export default Btn;
